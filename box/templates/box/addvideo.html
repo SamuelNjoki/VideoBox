@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+
+    <h2>Add Your Video</h2>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+<button type="submit" class="btn btn-success">Add</button>
+    </form>
+</div>
+
+{% endblock content %}
+
+
+

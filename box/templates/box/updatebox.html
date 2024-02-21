@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<div class="container">
+
+    <h2>Edit Box Title</h2>
+    <form action="" method="post">
+        {% csrf_token %}
+        {% comment %} {{form|crispy}} {% endcomment %}
+
+       <div class="col-md-3">{{form.title|as_crispy_field}}</div> 
+<button type="submit" class="btn btn-success">Save Changes</button>
+<a href="{% url "delete_box" box.id %}" class="btn btn-danger">Delete Box</a>
+    </form>
+</div>
+
+{% endblock content %}
+
+ 
+
