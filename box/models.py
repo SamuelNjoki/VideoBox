@@ -10,8 +10,11 @@ class Box(models.Model):
     def __str__(self):
         return f'{self.title}'
 
-class video(models.Model):
+class Video(models.Model):
     title=models.CharField(max_length=255)
     url=models.URLField()
     youtube_id=models.CharField(max_length=255)
     box=models.ForeignKey(Box,on_delete=models.CASCADE)
+    
+    def __str__(self):
+        return f'{self.title}'

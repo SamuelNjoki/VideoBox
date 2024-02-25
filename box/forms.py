@@ -1,9 +1,13 @@
-from .models import video
+from .models import Video
 from django import forms
 
 
 class VideoForm(forms.ModelForm):
     
     class Meta:
-        model=video
-        fields =['title','url','youtube_id']
+        model=Video
+        fields =['url']
+        labels={'url':'Youtube URL'}
+
+class SearchForm(forms.Form):
+    search_term=forms.CharField(max_length=255,label='Search for video:')

@@ -1,14 +1,21 @@
 {% extends "base.html" %}
-
+{% load crispy_forms_tags %}
 {% block content %}
 
 <div class="container">
 
     <h2>Add Your Video</h2>
-    <form action="" method="post">
+    <form action="" method="post" novalidate>
         {% csrf_token %}
-        {{form.as_p}}
-<button type="submit" class="btn btn-success">Add</button>
+        {{form|crispy}}
+        <button type="submit" class="btn btn-success">Add</button>
+    </form>
+
+    <h2>OR</h2>
+    <form action="" method="post">
+     {{s_form|crispy}}
+
+
     </form>
 </div>
 
